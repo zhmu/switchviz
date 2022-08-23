@@ -1,0 +1,72 @@
+
+                       SwitchConfig, version 1.0
+
+    Copyright (c) 2005, 2006 Rink Springer. All rights reserved.
+    This program is free software; you can redistribute it and/or
+    modify it under the same terms as Perl itself.
+
+INTRODUCTION
+------------
+
+This is a collection of scripts which are intended to aid you while
+administrating a network consisting of various managable switches.
+
+It can pull the configuration from scripts and generate HTML pages and images
+outlining the configuration of them.
+
+SUPPORTED HARDWARE
+------------------
+
+The following switches are supported:
+
+- hp
+  Tested on HP ProCurve 2512 and 2626 switches. NOTE: This requires an extra
+  'numports' setting to the number of switch ports.
+
+- 3com
+  Tested on 3Com CoreBuilder 3500 and 3Com SuperStack II 9300 switches.
+
+- alteon
+  Tested on an Alteon 180e switch/loadbalancer.
+
+- cisco
+  Tested on a Cisco Catalyse 2950C24-EI switch.
+
+Of course, patches implementing more switch types are very welcome.
+
+REQUIREMENTS
+------------
+
+The following dependancies are required:
+
+- Perl
+- Perl's Net::Telnet
+- Perl's HTML::Template
+- GraphViz
+
+INSTALLATION
+------------
+
+You will want to edit config.pl and switches.pl; the first is the overal configuration file,
+the latter lists the switches to query.
+
+The scripts assume the $xxx_DIR locations already exists.
+
+SCRIPTS
+-------
+
+switch-backup.pl: This will pull the switch configuration from the various switches using TFTP
+                  and telnet.
+generate.pl:      Generates the switch overview HTML pages.
+
+DOCUMENTATION
+-------------
+
+SwitchConfig.pm is fully perldoc(1)-aware; use perldoc SwitchConfig to see how to use the
+information.
+
+CREDITS
+-------
+
+These scripts were written by Rink Springer <mail@rink.nu>. Feel free to use them under the
+same license as Perl itself.
